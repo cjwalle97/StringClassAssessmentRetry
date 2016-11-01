@@ -6,6 +6,8 @@ int main()
 {
 	My_String ms = My_String("Chad");
 	My_String check = My_String("Bob");
+	My_String Sub = My_String("a");
+	My_String Replace = My_String("E");
 	ms.Length();
 	ms.FindIndex(2);
 	assert(ms.Compare("Bob") == false);
@@ -14,8 +16,8 @@ int main()
 	assert(ms.Cstyle());
 	ms.Uppercase();
 	ms.Lowercase();
-	assert(ms.SubString('a') == true);
-	assert(ms.SubStringIndex('a', 2) == true);
-	ms.ReplaceSub('a', 'e');
+	assert(ms.SubString(Sub) == true);
+	assert(ms.SubStringIndex(Sub, 2) == true);
+	ms.ReplaceSub(Sub, Replace);
 	system("pause");
 }
