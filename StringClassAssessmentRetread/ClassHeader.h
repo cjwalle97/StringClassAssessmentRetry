@@ -16,7 +16,7 @@ public:
 	const char* Cstyle();
 	My_String Uppercase();
 	My_String Lowercase();
-	bool SubString(char string);
-	bool SubStringIndex(char string, int s);
-	void ReplaceSub(char SubString, char Replacement);
+	bool SubString(My_String string);
+	bool SubStringIndex(My_String string, int s);
+	void ReplaceSub(My_String SubString, My_String Replacement);
 };

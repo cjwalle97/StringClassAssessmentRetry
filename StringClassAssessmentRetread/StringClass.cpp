@@ -26,14 +26,6 @@ char My_String::FindIndex(int i)
 {
 	if (i <= Length() && i >= 0)
 		return m_name[i];
-	/*char k;
-	k = 'a';
-	char Index;
-	for (int i = 0; m_name[i] != k; i++)
-	{
-	Index = m_name[i];
-	}
-	return Index;*/
 }
 //Name: Compare
 //Type: bool
@@ -129,41 +121,40 @@ My_String My_String::Lowercase()
 //Name: SubString
 //Type: bool
 //Description: to check if there is a sub string inside the main string
-bool My_String::SubString(char string)
+bool My_String::SubString(My_String string)
 {
-	int i = 0;
-	char checker = m_name[i];
-	for (; i < Length(); i++)
+	for (int i = 0; i < Length(); i++)
 	{
-		if (checker = string)
+		if (m_name[i] == string)
 		{
 			return true;
 		}
 	}
+	return true;
 }
 //Name: SubStringIndex
 //Type: bool
 //Description: to check and see if there is a substring in a certain index of the main string
-bool My_String::SubStringIndex(char string, int s)
+bool My_String::SubStringIndex(My_String string, int s)
 {
-	char checker;
-	checker = m_name[s];
-	if (checker = string)
+	if (m_name[s] == string)
+	{
 		return true;
+	}
+	return false;
 }
 //Name: ReplaceSub
 //Type: void
 //Description: to replace the substring with another string
-void My_String::ReplaceSub(char SubString, char Replacement)
+void My_String::ReplaceSub(My_String SubString, My_String Replacement)
 {
-	int i = 0;
-	char checker;
-	checker = m_name[i];
-	for (; i < Length(); i++)
+	char changer;
+	for (int i = 0; i < Length(); i++)
 	{
-		if (checker = SubString)
+		if (m_name[i] == SubString)
 		{
 			SubString = Replacement;
+			
 		}
 	}
 }
