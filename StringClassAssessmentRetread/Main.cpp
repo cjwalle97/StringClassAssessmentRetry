@@ -6,8 +6,8 @@ int main()
 {
 	My_String ms = My_String("Chad");
 	My_String check = My_String("Bob");
-	My_String Sub = My_String("a");
-	My_String Replace = My_String("E");
+	My_String Sub = My_String("Chad");
+	My_String Replace = My_String("Chaz");
 	ms.Length();
 	ms.FindIndex(2);
 	assert(ms.Compare("Bob") == false);

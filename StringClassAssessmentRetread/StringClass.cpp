@@ -123,12 +123,26 @@ My_String My_String::Lowercase()
 //Description: to check if there is a sub string inside the main string
 bool My_String::SubString(My_String string)
 {
+	int s = 0;
 	for (int i = 0; i < Length(); i++)
 	{
-		if (m_name[i] == string)
+		if (m_name[i] == string.m_name[s])
 		{
-			return true;
+			for (; s < string.Length(); s++)
+			{
+				if (m_name[i] != string.m_name[s])
+				{
+					if (m_name[i] == '\0' && string.m_name[s] != '\0')
+					{
+						return false;
+					}
+					continue;
+				}
+				continue;
+			}
+			continue;
 		}
+		continue;
 	}
 	return true;
 }
@@ -137,10 +151,6 @@ bool My_String::SubString(My_String string)
 //Description: to check and see if there is a substring in a certain index of the main string
 bool My_String::SubStringIndex(My_String string, int s)
 {
-	if (m_name[s] == string)
-	{
-		return true;
-	}
 	return false;
 }
 //Name: ReplaceSub
@@ -148,13 +158,5 @@ bool My_String::SubStringIndex(My_String string, int s)
 //Description: to replace the substring with another string
 void My_String::ReplaceSub(My_String SubString, My_String Replacement)
 {
-	char changer;
-	for (int i = 0; i < Length(); i++)
-	{
-		if (m_name[i] == SubString)
-		{
-			SubString = Replacement;
-			
-		}
-	}
+	
 }
